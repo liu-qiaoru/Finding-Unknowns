@@ -47,6 +47,62 @@ Use $finding-unknowns to do a blind-spot pass before we implement this feature.
 使用 $finding-unknowns，先帮我找出这个任务里的未知、盲点和需要确认的问题。
 ```
 
+## 使用案例
+
+### 1. 进入不熟悉的代码模块
+
+```text
+使用 $finding-unknowns。我准备给这个项目新增一个 auth provider，但我不熟悉现有 auth 模块。
+请先做 blind-spot pass，找出我可能不知道但会影响实现的约束。
+```
+
+适合产出：`Unknowns brief`，默认保存到 `docs/finding-unknowns/...-unknowns.md`。
+
+### 2. 需求还很模糊，但想先收敛方向
+
+```text
+Use $finding-unknowns. I want to reduce onboarding churn, but I don't know where the best intervention point is.
+Search the codebase and help me identify unknowns, likely leverage points, and the first decision I should make.
+```
+
+适合产出：`Unknowns brief`，然后进入一次一个问题的 `Interview`。
+
+### 3. 用户说不清审美，但看得出好坏
+
+```text
+使用 $finding-unknowns。我要做一个数据 dashboard，但我说不清想要什么视觉风格。
+先不要接真实数据，做几个低成本方向让我反应。
+```
+
+适合产出：`Prototype set`，例如 Markdown 对比、HTML mock 或多个轻量视觉方案。
+
+### 4. 已经有方案，需要被拷问
+
+```text
+Use $finding-unknowns. Here is my implementation plan: [...]
+Interview me one question at a time. Prioritize questions where my answer would change architecture, data model, UX, or scope.
+```
+
+适合产出：`Interview`，目标是在执行前达成 shared understanding。
+
+### 5. 实现过程中发现计划不完全对
+
+```text
+使用 $finding-unknowns。继续实现这个 plan，但如果发现边界情况导致需要偏离计划，
+请记录到 implementation-notes.md，并说明你选择的保守方案。
+```
+
+适合产出：`Implementation notes`，记录假设、偏离、边界情况和决策。
+
+### 6. 完成后需要给 reviewer 解释
+
+```text
+Use $finding-unknowns. Package the final change into a reviewer explainer:
+what changed, why, what assumptions remain, how to verify it, and what risks were handled.
+```
+
+适合产出：`Reviewer explainer`，用于 PR、Slack 或评审沟通。
+
 ## 它会产出什么
 
 - **未知清单：** 已知事实、已知未知、可能的盲点、建议追问的问题。

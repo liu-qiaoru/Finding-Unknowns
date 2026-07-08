@@ -70,16 +70,33 @@ Write an implementation plan. Lead with decisions I may want to tweak, then list
 Keep implementation notes. If you deviate from the plan because of an edge case, choose the conservative path, log it under Deviations, and keep going.
 ```
 
-## 输出契约
+## Artifact 选择规则
 
-使用这个 skill 时，产出下列某种具体 artifact，而不是泛泛讨论：
+使用这个 skill 时，默认一次只产出一个当前阶段最有用的 artifact，不要一次性生成全套材料。
 
-- **Unknowns brief：** 已知信息、未知问题、盲点、建议追问。
-- **Prototype set：** 针对主观选择给出几个低成本方向。
-- **Interview：** 一次提出一个高价值问题。
-- **Implementation plan：** 可变更决策在前，机械步骤在后。
-- **Implementation notes：** 假设、偏离、边界情况和决策记录。
-- **Reviewer explainer：** 面向评审的简洁交接，包含验证方式和残余风险。
+### 默认顺序
+
+1. **Unknowns brief：** 任务开始、需求模糊、领域不熟或隐藏约束较多时，先产出它。
+2. **Interview：** `Unknowns brief` 发现关键决策未定时，一次只问一个会改变方向的问题。
+3. **Prototype set：** 成功标准主观、用户说不清但看得出来时，先给几个低成本方向。
+4. **Implementation plan：** 关键未知收敛、准备执行前再写。可变更决策在前，机械步骤在后。
+5. **Implementation notes：** 长任务或实现中发现新未知、偏离计划时维护。
+6. **Reviewer explainer：** 完成后需要交接、评审或争取 buy-in 时产出。
+
+### 默认落盘策略
+
+- 探索期默认把 `Unknowns brief` 保存到 `docs/finding-unknowns/YYYY-MM-DD-<topic>-unknowns.md`。
+- 如果继续进入计划阶段，把 `Implementation plan` 保存到 `docs/finding-unknowns/YYYY-MM-DD-<topic>-plan.md`。
+- `Prototype set` 默认保存到 `docs/finding-unknowns/YYYY-MM-DD-<topic>-prototypes.md`；如果是可视化 HTML，则保存为 `.html`。
+- `Implementation notes` 默认保存为当前任务目录下的 `implementation-notes.md`，因为它是实现中的临时工作笔记。
+- `Reviewer explainer` 默认保存到 `docs/finding-unknowns/YYYY-MM-DD-<topic>-reviewer-explainer.md`。
+- 如果用户明确说“不要落盘”或任务很短，只在对话中输出，并说明未保存文件。
+
+### 命名规则
+
+- `<topic>` 使用 3-6 个英文 kebab-case 词，来自任务目标，例如 `auth-provider-unknowns`。
+- 文件开头写清楚：任务、日期、当前阶段、下一步建议。
+- 每次保存后，在回复里给出文件路径和本轮只产出了哪一种 artifact。
 
 ## 常见错误
 
