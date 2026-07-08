@@ -1,0 +1,10 @@
+{
+  "name": "finding-unknowns",
+  "description": "Find blind spots, hidden assumptions, and unclear success criteria before complex AI-assisted work.",
+  "version": "1.0.0",
+  "author": {
+    "name": "liu-qiaoru"
+  },
+  "homepage": "https://github.com/liu-qiaoru/Finding-Unknowns",
+  "repository": "https://github.com/liu-qiaoru/Finding-Unknowns"
+}

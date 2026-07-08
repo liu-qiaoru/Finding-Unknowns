@@ -6,14 +6,32 @@
 
 ## 安装
 
-使用 Codex 通用的 GitHub skill 安装方式：
+### Codex
 
-```bash
-python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --url https://github.com/liu-qiaoru/Finding-Unknowns/tree/main/skills/finding-unknowns
+在 Codex 里使用内置的 skill installer，不需要直接运行 Python 脚本：
+
+```text
+$skill-installer
+Install https://github.com/liu-qiaoru/Finding-Unknowns/tree/main/skills/finding-unknowns
 ```
 
 安装后重启 Codex，让新 skill 生效。
+
+### Claude Code
+
+Claude Code 使用 plugin marketplace 安装。这个仓库已经包含 `.claude-plugin/marketplace.json` 和 plugin 目录：
+
+```text
+/plugin marketplace add liu-qiaoru/Finding-Unknowns
+/plugin install finding-unknowns@finding-unknowns
+/reload-plugins
+```
+
+安装后使用：
+
+```text
+/finding-unknowns:finding-unknowns
+```
 
 ## 使用
 
