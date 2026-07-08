@@ -1,0 +1,7 @@
+interface:
+  display_name: "Finding Unknowns"
+  short_description: "Clarify blind spots before complex work"
+  default_prompt: "Use $finding-unknowns to help me find the unknowns in this task before we implement it."
+
+policy:
+  allow_implicit_invocation: true
